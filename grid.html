@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>RESUME</title>
+</head>
+
+<style>
+    .container {
+        max-width: 992px;
+        margin: auto;
+    }
+    .resume {
+        display: grid;
+    }
+    .resume-left {
+        background: indianred;
+        padding: 1rem 1.5rem;
+    }
+    .resume-right {
+        background: #403A3A;
+        padding: 1rem 1.5rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        .resume {
+            grid-template-columns: 1fr 0.5fr;
+        }
+    }
+</style>
+
+<body>
+
+<div class="container">
+    <div class="resume">
+        <div class="resume-left">
+            GRID 1
+        </div>
+        <div class="resume-right">
+            GRID 2
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

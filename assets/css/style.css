@@ -31,6 +31,7 @@
 
     /* Z-INDEX */
     --z-tooltip: 10;
+    --z-nav: 20;
     --z-fixed: 100;
 }
 
@@ -93,18 +94,30 @@ img {
 .section {
     padding: 0.5rem 0;
 }
+.section-title-container {
+    display: inline-block;
+}
 .section-title {
+    position: relative;
     font-size: var(--h2-font-size);
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
-    letter-spacing: 0.35rem;
+    letter-spacing: 0.15rem;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     margin-bottom: var(--m-3);
+}
+.section-title::before {
+    content: '';
+    height: 3px;
+    width: calc(100% - 3px);
+    bottom: -5px;
+    position: absolute;
+    background: var(--title-color);
 }
 
 /* LAYOUT */
-.bd-container {
+.container {
     max-width: 968px;
     width: calc(100% - 3rem);
     margin-left: var(--m-3);
@@ -135,13 +148,13 @@ img {
 @media screen and (max-width: 968px) {
     .nav__menu {
         position: fixed;
-        bottom: -100%;
-        left: 0;
+        bottom: var(--header-height);
+        left: -100%;
         width: 100%;
         padding: 2rem 1.5rem;
         background-color: var(--body-color);
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-        z-index: var(--z-fixed);
+        z-index: var(--z-nav);
         transition: 0.3s;
     }
 }
@@ -180,6 +193,7 @@ img {
 /* show-menu */
 .show-menu {
     bottom: var(--header-height);
+    left: 0;
 }
 
 /* ACTIVE MENU LINK */
@@ -262,7 +276,7 @@ img {
 }
 
 /* PROFILE */
-.profile__description {
+.about__description {
     text-align: justify !important;
     font-weight: normal;
 }
@@ -329,20 +343,28 @@ img {
 }
 
 /* SKILLS AND LANGUAGES */
-.skills__content,
-.languages__content{
+.languages__content {
     grid-template-columns: repeat(2, 1fr);
 }
 .skills__content {
-    gap: 0;
+
 }
-.skills__name,
-.languages__name{
+.languages__name {
     display: flex;
     align-items: center;
 }
-.skills__circle,
-.languages__circle{
+.skills__data {
+    display: flex;
+    flex-wrap: wrap;
+}
+.skills__name {
+    padding: 2px 4px;
+    margin: 0.25rem;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    text-align: center;
+}
+.languages__circle {
     display: inline-block;
     width: 5px;
     height: 5px;
@@ -355,6 +377,7 @@ img {
 .awards__title {
     font-size: var(--h3-font-size);
     margin-bottom: var(--m-1);
+    margin-top: 0;
 }
 .awards__institute {
     font-size: 0.875rem;
@@ -416,7 +439,7 @@ img {
     body {
         margin: 3rem 0;
     }
-    .bd-container {
+    .container {
         margin-left: auto;
         margin-right: auto;
     }
@@ -435,7 +458,7 @@ img {
     }
     .resume__left,
     .resume__right {
-        padding: 0 1.5rem;
+        padding: 0.5rem 1.5rem;
     }
     .section-title,
     .profile__description {
