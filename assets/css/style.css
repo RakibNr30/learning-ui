@@ -394,8 +394,6 @@ img {
 /* INTERESTS */
 .interests__container {
     grid-template-columns: repeat(3, 1fr);
-    margin-top: var(--m-2);
-    margin: 0;
 }
 .interests__content {
     display: flex;
