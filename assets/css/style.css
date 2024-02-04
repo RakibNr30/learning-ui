@@ -395,12 +395,12 @@ img {
 .interests__container {
     grid-template-columns: repeat(3, 1fr);
     margin-top: var(--m-2);
+    margin: 0;
 }
 .interests__content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
 }
 .interests__icon {
     font-size: 1.5rem;
@@ -484,4 +484,12 @@ img {
         grid-template-columns: repeat(4, max-content);
         column-gap: 3.5rem;
     }
+}
+
+/* UTILS */
+.mt-0 {
+    margin-top: 0;
+}
+.mb-0 {
+    margin-bottom: 0;
 }
